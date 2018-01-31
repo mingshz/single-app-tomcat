@@ -1,0 +1,12 @@
+<context>
+    <Resource name="jdbc/Piwik"
+              type="javax.sql.DataSource"
+              username=""
+              password=""
+              driverClassName="org.h2.Driver"
+              url="jdbc:h2:mem:piwik;DB_CLOSE_DELAY=-1"
+              maxTotal="8"
+              maxIdle="4"/>
+
+    <Parameter name="log4j.org.apache.commons.vfs2" value="warn"/>
+</context>
