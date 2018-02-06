@@ -32,9 +32,21 @@ public class Loader {
 //                .start(new SystemEnvironment());
         new Loader().start(new SystemEnvironment());
 
-        System.out.println("Loader is loading Tomcat Catalina instance...");
-        Process process = new ProcessBuilder().inheritIO()
-                .command("catalina.sh", "run").start();
+        System.getenv().forEach((k,v)->System.out.println(k+":"+v));
+        System.getProperties().list(System.out);
+
+        Process process;
+        if (System.getenv("JPDA_ENABLE") != null) {
+            System.out.println("Loader is loading Tomcat(debug) Catalina instance...");
+            process = new ProcessBuilder().inheritIO()
+                    .command("catalina.sh", "jpda", "run").start();
+        } else {
+            System.out.println("Loader is loading Tomcat Catalina instance...");
+            process = new ProcessBuilder().inheritIO()
+                    .command("catalina.sh", "run").start();
+        }
+
+
         System.exit(process.waitFor());
     }
 
