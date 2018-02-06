@@ -32,8 +32,8 @@ public class Loader {
 //                .start(new SystemEnvironment());
         new Loader().start(new SystemEnvironment());
 
-        System.getenv().forEach((k,v)->System.out.println(k+":"+v));
-        System.getProperties().list(System.out);
+//        System.getenv().forEach((k,v)->System.out.println(k+":"+v));
+//        System.getProperties().list(System.out);
 
         Process process;
         if (System.getenv("JPDA_ENABLE") != null) {
