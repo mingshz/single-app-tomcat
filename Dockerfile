@@ -32,4 +32,6 @@ RUN chmod +x /wait-for-it.sh
 #VOLUME ["/newDD"]
 
 #ENTRYPOINT java -cp /loader/installer.jar com.ming.docker.tomcat.Loader
+#确保tomcat退出 当应用启动失败时
+ENV JAVA_OPTS="-Dorg.apache.catalina.startup.EXIT_ON_INIT_FAILURE=true"
 ENTRYPOINT java -jar /loader/installer-jar-with-dependencies.jar
