@@ -14,9 +14,9 @@ FROM tomcat:8.0-jre8
 RUN rm -rf ${CATALINA_HOME}/webapps/*
 
 #复制driver
-COPY installer/src/main/docker/drivers/h2-1.4.192.jar ${CATALINA_HOME}/lib/
-COPY installer/src/main/docker/drivers/mssql-jdbc-6.1.0.jre8.jar ${CATALINA_HOME}/lib/
-COPY installer/src/main/docker/drivers/mysql-connector-java-6.0.5.jar ${CATALINA_HOME}/lib/
+#COPY installer/src/main/docker/drivers/h2-1.4.192.jar ${CATALINA_HOME}/lib/
+#COPY installer/src/main/docker/drivers/mssql-jdbc-6.1.0.jre8.jar ${CATALINA_HOME}/lib/
+#COPY installer/src/main/docker/drivers/mysql-connector-java-6.0.5.jar ${CATALINA_HOME}/lib/
 
 #部署builder构建完成的 jar包
 #COPY maven /loader
